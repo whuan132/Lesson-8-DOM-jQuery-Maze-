@@ -13,7 +13,9 @@ $(document).ready(function () {
 
   // Mouseover event handler to turn all boundaries red
   $boundaries.mouseover(function () {
-    if (!isStarted) return;
+    if (!isStarted) {
+      return;
+    }
     resetGame();
     $boundaries.addClass(className);
     $status.text('You lose! Click "S" to try again.');
@@ -21,14 +23,18 @@ $(document).ready(function () {
 
   // Click event handler for the end div
   $end.mouseenter(function () {
-    if (!isStarted) return;
+    if (!isStarted) {
+      return;
+    }
     resetGame();
     $status.text("You win! :]");
   });
 
   // Click event handler for the start div to reset the maze state
   $start.click(function () {
-    if (isStarted) return;
+    if (isStarted) {
+      return;
+    }
     resetGame();
     isStarted = true;
     $boundaries.removeClass(className);
@@ -42,7 +48,9 @@ $(document).ready(function () {
 
   // Mouseleave event handler for the maze container
   $maze.mouseleave(function () {
-    if (!isStarted) return;
+    if (!isStarted) {
+      return;
+    }
     resetGame();
     $status.text('You lose! Click "S" to try again.');
   });
